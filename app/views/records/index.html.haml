@@ -19,12 +19,18 @@
       %li.list__item
         詳細
 
-  .data
-    %ul.data__box
-      %li.data__item
-      %li.data__item
-      %li.data__item
-      %li.data__item
-      %li.data__item
-      %li.data__item
-
+  .date
+    .date__box
+      - @records.each do |record|
+        .date__item
+          = record.date
+        .date__item
+          = record.start_time
+        .date__item
+          = record.end_time
+        .date__item
+          = record.major_class
+        .date__item
+          = record.middle_class
+        .date__item
+          = record.small_class 
