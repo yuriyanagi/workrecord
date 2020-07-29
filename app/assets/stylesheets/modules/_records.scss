@@ -6,12 +6,18 @@
   background-color: red;
 }
 
-.list__title{
+.list{
   display: flex;
+  justify-content: space-around;
   background-color: green;
 }
 
-.date__box{
+.date{
   display: flex;
+  flex-direction: column;
   background-color: blue;
+  &__box{
+    display: flex;
+    justify-content: space-around;
+  }
 }

@@ -5,32 +5,31 @@
 
 .main
   .list
-    %ul.list__title
-      %li.list__item
-        日付
-      %li.list__item
-        開始時間
-      %li.list__item
-        終了時間
-      %li.list__item
-        大分類
-      %li.list__item
-        中分類
-      %li.list__item
-        詳細
+    .list__item
+      日付
+    .list__item
+      開始時間
+    .list__item
+      終了時間
+    .list__item
+      大分類
+    .list__item
+      中分類
+    .list__item
+      詳細
 
   .date
-    .date__box
-      - @records.each do |record|
-        .date__item
+    - @records.each do |record|
+      .date__box
+        .date__box__item
           = record.date.strftime("%Y/%-m/%-d")
-        .date__item
+        .date__box__item
           = record.start_time.strftime("%-H:%-M")
-        .date__item
+        .date__box__item
           = record.end_time.strftime("%-H:%-M")
-        .date__item
+        .date__box__item
           = record.major_class
-        .date__item
+        .date__box__item
           = record.middle_class
-        .date__item
+        .date__box__item
           = record.small_class 
