@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2020_07_27_124650) do
 
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "date", null: false
-    t.datetime "start_time", null: false
-    t.datetime "end_time", null: false
+    t.date "date", null: false
+    t.time "start_time", null: false
+    t.time "end_time", null: false
     t.string "major_class", null: false
     t.string "middle_class", null: false
     t.string "small_class", null: false
