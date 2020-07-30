@@ -6,7 +6,7 @@ class CreateRecords < ActiveRecord::Migration[6.0]
       t.time :end_time, null: false
       t.string :major_class, null: false
       t.string :middle_class, null: false
-      t.string :small_class , null: false
+      t.string :small_class, null: false
       t.timestamps
     end
   end

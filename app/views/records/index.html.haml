@@ -2,7 +2,9 @@
   .header__bar
     %h1.header__title
       Work Record
-
+    .header__link
+      = link_to new_record_path do
+        入力する
 .main
   .list
     .list__item
@@ -33,3 +35,14 @@
           = record.middle_class
         .date__box__item
           = record.small_class 
+
+.footer
+  = form_with model:@record, html: {class:"form"}, local: true do |f|
+    .form__contents
+      = f.date_field :date, class: "form__item", placeholder: "日付"
+      = f.time_field :start_time, class: "form__item", placeholder: "開始時間"
+      = f.time_field :end_time, class: "form__item", placeholder: "終了時間"
+      = f.text_field :major_class, class: "form__item", placeholder: "大分類"
+      = f.text_field :middle_class, class: "form__item", placeholder: "中分類"
+      = f.text_field :small_class, class: "form__item", placeholder: "詳細"
+    = f.submit 'send', class: "form__submit"
