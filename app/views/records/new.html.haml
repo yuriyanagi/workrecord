@@ -1,0 +1,11 @@
+.contents
+  .content
+    = form_with model:@record, html: {class:"form"}, local: true do |f|
+      .form__contents
+        = f.text_field :content, class: "form__item", placeholder: "日付"
+        = f.text_field :content, class: "form__item", placeholder: "開始時間"
+        = f.text_field :content, class: "form__item", placeholder: "終了時間"
+        = f.text_field :content, class: "form__item", placeholder: "大分類"
+        = f.text_field :content, class: "form__item", placeholder: "中分類"
+        = f.text_field :content, class: "form__item", placeholder: "詳細"
+      = f.submit 'send', class: "form__submit"
