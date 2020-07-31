@@ -22,11 +22,11 @@
     - @records.each do |record|
       .date__box
         .date__box__item
-          = record.date.strftime("%Y/%-m/%-d")
+          = record.date.strftime("%Y/%m/%d")
         .date__box__item
-          = record.start_time.strftime("%-H:%-M")
+          = record.start_time.strftime("%H:%M")
         .date__box__item
-          = record.end_time.strftime("%-H:%-M")
+          = record.end_time.strftime("%H:%M")
         .date__box__item
           = record.major_class
         .date__box__item
