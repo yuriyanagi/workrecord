@@ -7,7 +7,13 @@ class RecordsController < ApplicationController
 
   def create
     @record = Record.new(record_params)
-    @record.save
+    if @record.save
+      respond_to do |format|
+        format.json
+      end
+    else
+      flash.now[:alert] = '入力できません'
+    end
   end
 
   private
