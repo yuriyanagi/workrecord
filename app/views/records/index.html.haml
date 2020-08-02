@@ -1,46 +1,49 @@
-.header
-  .header__bar
-    %h1.header__title
-      Work Record
+.wrapper
+  .header
+    .header__bar
+      %h1.header__title
+        Work Record
 
-.main
-  .list
-    .list__item
-      日付
-    .list__item
-      開始時間
-    .list__item
-      終了時間
-    .list__item
-      大分類
-    .list__item
-      中分類
-    .list__item
-      詳細
+  .main
+    .list
+      .list__item
+        .list__item__date
+          日付
+        .list__item__start_time
+          開始時間
+        .list__item__end_time
+          終了時間
+        .list__item__major_class
+          会社名
+        .list__item__middle_class
+          分類
+        .list__item__small_class
+          詳細
 
-  .date
-    - @records.each do |record|
-      .date__box
-        .date__box__item
-          = record.date.strftime("%Y/%m/%d")
-        .date__box__item
-          = record.start_time.strftime("%H:%M")
-        .date__box__item
-          = record.end_time.strftime("%H:%M")
-        .date__box__item
-          = record.major_class
-        .date__box__item
-          = record.middle_class
-        .date__box__item
-          = record.small_class 
+    .date
+      - @records.each do |record|
+        .date__box
+          .date__box__item__date
+            = record.date.strftime("%Y/%m/%d")
+          .date__box__item__start_time
+            = record.start_time.strftime("%H:%M")
+          .date__box__item__end_time
+            = record.end_time.strftime("%H:%M")
+          .date__box__item__major_class
+            = record.major_class
+          .date__box__item__middle_class
+            = record.middle_class
+          .date__box__item__small_class
+            = record.small_class 
 
-.footer
+  
   = form_with model:@record, html: {class:"form"}, local: true do |f|
-    .form__contents
-      = f.date_field :date, class: "form__item", placeholder: "日付"
-      = f.time_field :start_time, class: "form__item", placeholder: "開始時間"
-      = f.time_field :end_time, class: "form__item", placeholder: "終了時間"
-      = f.text_field :major_class, class: "form__item", placeholder: "大分類"
-      = f.text_field :middle_class, class: "form__item", placeholder: "中分類"
-      = f.text_field :small_class, class: "form__item", placeholder: "詳細"
-    = f.submit 'send', class: "form__submit"
+    .form__item
+      = f.date_field :date, class: "form__item__date", placeholder: "日付"
+      = f.time_field :start_time, class: "form__item__start_time", placeholder: "開始時間"
+      = "〜"
+      = f.time_field :end_time, class: "form__item__end_time", placeholder: "終了時間"
+      = f.text_field :major_class, class: "form__item__major_class", placeholder: "会社名"
+      = f.text_field :middle_class, class: "form__item__middle_class", placeholder: "分類"
+      = f.text_field :small_class, class: "form__item__small_class", placeholder: "詳細"
+    = f.submit 'SEND', class: "form__submit"
